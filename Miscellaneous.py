@@ -3,7 +3,7 @@
 """
 Created on Fri Aug 18 13:32:39 2023
 
-@author: luiz
+@author: Luiz Eduardo Czelusniak
 """
 
 import numpy as np
@@ -18,10 +18,6 @@ class CS_EOS:
     T_c = 1
     P_c = 1
     rho_c = 1
-    # EOS temperature and densities of maximum and minimum pressure
-    T = 1
-    rho_max = 1
-    rho_min = 1
         
     # Compute EOS pressure from density and temperature
     def P_from_rho( self, rho, T ):
@@ -246,9 +242,37 @@ class Integration:
             x = x + 2 * dx
         return Int
     
+#*****************************************************************************    
     
+class Interpolation:
     
+    # Class initialization
+    def __init__( self, x_input, y_input ):
+        self.xv = x_input
+        self.yv = y_input
+        self.Nv = len( x_input )
+        
+    # Compute interpolation
+    def Interpol( self, x ):
+        # Verify if x is a valid point
+        if( x < self.xv[0] - 1e-12 or x > self.xv[self.Nv-1] + 1e12 ):
+            print( "Incorrect x value for interpolation" )
+        
+        # Loop for all xv values
+        dx = ( self.xv[self.Nv-1] - self.xv[0] ) / ( self.Nv - 1 )
+        j = np.floor( ( x - self.xv[0] ) / dx )
+        if( j > 1 ):
+            j = j - 1
+        for i in range( round(j), self.Nv - 1 ):
+            if( x >= self.xv[i] - 1e-12 and x <= self.xv[i+1] + 1e12  ):
+                dy = self.yv[i+1] - self.yv[i]
+                dx = self.xv[i+1] - self.xv[i]
+                y = self.yv[i] + ( x - self.xv[i] ) * dy / dx
+        
+        return y
     
+
+            
     
     
     
