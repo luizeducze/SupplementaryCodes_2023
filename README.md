@@ -1,6 +1,10 @@
 # SuppMaterial_Alfa01
 This project contains the codes used in our publication comparing P-LBM and FE-LBM
 
+Authors: Luiz Eduardo Czelusniak, Ivan Talao Martins, Luben Cabezas Gómez,
+            Natan Augusto Vieira Bulgarelli, William Monte Verde, 
+            Marcelo Souza de Castro
+
 Miscellaneous.py: 
     Contain classes and functions used by all other codes, such as
     EOS related functions, integration and interpolation functions
@@ -45,6 +49,38 @@ ContinuousPoiseulle_Plbm.py:
     Compute the theoretical velocity profile for a two-phase flow between 
     parallel plates considering a diffuse interface with the pseudopotential 
     method
+ 
+FreeEnergyLBM_Planar_Interface.m:
+    Matlab code for improved well balanced free energy LBM simulation of a 
+    planar interface
+    
+FreeEnergyLBM_Droplet.m:
+    Matlab code for improved well balanced free energy LBM simulation of a 
+    static droplet
+    
+FreeEnergylLBM_Parallel_Plater.m:
+    Matlab code for improved well balanced free energy LBM simulation of a 
+    two-phase flow between parallel plates
+    
+FreeEnergyLBM_Coallescence.m:
+    Matlab code for improved well balanced free energy LBM simulation of 
+    two droplet coallescence 
+   
+PseudopotentialLBM_Planar_Interface.m:
+    Matlab code for modified pseudopotential LBM simulation of a planar 
+    interface
+    
+PseudopotentialLBM_Droplet.m:
+    Matlab code for modified pseudopotential LBM simulation of a static droplet
+    
+PseudopotentialLBM_Parallel_Plater.m:
+    Matlab code for modified pseudopotential LBM simulation of a two-phase flow
+    between parallel plates
+    
+PseudopotentialLBM_Coallescence.m:
+    Matlab code for modified pseudopotential LBM simulation of two droplet
+    coallescence
+    
     
 
     
